@@ -85,7 +85,8 @@ require app_path().'/filters.php';
 | Error 404 Handler
 |--------------------------------------------------------------------------
 |
-| Here we register the error handler, which listen for the ModelNotFoundException.
+| Here we are registering the error handler, which listen for the ModelNotFoundException.
+| This will be called in action if the user enter a non-existig short-URL
 |
 */
 
@@ -93,5 +94,5 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 App::error(function(ModelNotFoundException $e)
 {
-    return Response::make('Not Found', 404);
+    return Response::view('not_found');
 });

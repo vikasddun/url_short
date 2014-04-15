@@ -11,12 +11,12 @@
 |
 */
 
+
+//Default Route for displaying the homepage & form
 Route::get('/', 'HomeController@showWelcome');
 
-Route::get('users', 'UserController@getIndex');
-
-Route::get('urls', 'HomeController@showhash');
-
+//Route for URL-form submission
 Route::post('generateHash', 'HomeController@generateHash');
 
-Route::any('{path?}', 'HomeController@showUrl')->where('path', '.+');
+//Wildcard Route to catch all the request except those covered in above listed routes
+Route::any('{path?}', 'HomeController@goToUrl')->where('path', '.+');
