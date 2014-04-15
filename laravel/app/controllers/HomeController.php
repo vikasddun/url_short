@@ -49,7 +49,7 @@ class HomeController extends BaseController {
         if(!empty($data->url_hash)) {         //If Yes, display the existing record
         	$response['data'] = url($data->url_hash);
         }
-        else{								 //URl does not exist, create a new record
+        else{								 //URL does not exist, create a new record
 
         	$hash = hash("crc32", $url);
 

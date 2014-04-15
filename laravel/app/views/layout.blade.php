@@ -8,11 +8,14 @@
 		<script type="text/javascript" src="script.js"></script>		
 	</head>
     <body>
-    	<div class="container">
+    	<div class="menu top-header">
+    		<h1>URL Shortener</h1>
+    	</div>
+    	<div class="container main">
 
-	        <h1>URL Shortener</h1>
-
-	        @yield('content')
+    		<div class="hero-unit">
+	        	@yield('content')
+	    	</div>
 	    </div>
     </body>
 </html>

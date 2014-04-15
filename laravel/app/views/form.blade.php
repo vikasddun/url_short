@@ -8,7 +8,7 @@
     	
     	{{ Form::text('url', null, array('class'=>"input-block-level required"))  }}
 
-    	{{ Form::submit('Shorten', array('class'=>"btn btn-large btn-primary"))  }}
+    	{{ Form::submit('Shorten »', array('class'=>"btn btn-large btn-primary"))  }}
 
 
     {{ Form::close() }}

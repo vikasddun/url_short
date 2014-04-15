@@ -7,28 +7,27 @@ $(document).ready(function(e) {
                 $(element).addClass('validation-error');
             },
 		submitHandler: function(form) { 
-				console.log('Ajax Submit');
+				
 				$.ajax({
 					type: "POST",
 					url: $(form).attr('action'),
 					data: $(form).serialize(),
 					dataType: 'JSON',
 					success: function(response) {
-						console.log('success in ajax');
+						//console.log('success');
+						
 						var link = response.data;
 						if(response.status == 'success') {
 							var href = "<a href=\""+link+"\">"+link+"</a>";
-							//var href = "<a>"+link+"</a>";
-							//$(href).attr('href',link);
-							$('#hashed_url').html("<a href=\""+link+"\" target=\"_blank\">"+link+"</a>");
+							$('#hashed_url').html("<strong>Shortened URL:</strong> <a href=\""+link+"\" target=\"_blank\">"+link+"</a>");
 
 						} else {
-							console.log('error in ajax');
+							//console.log('error in ajax');
 						}
 					},
 					error: function(jqXHR, textStatus, errorThrown){
-						console.log('response error');
-						console.log('error occured' + errorThrown);
+						//console.log('response error');
+						//console.log('error occured' + errorThrown);
 						return false;
 					}
 				});
